@@ -1,38 +1,63 @@
 :root{
-    --bg-color: rgb(20, 20, 20)
+    --bg-color: rgb(30, 30, 30);
+    --groups: 18;
+    --columns: 11;
+    --periods: 1em;
+    --nonmetal: rgb(60, 255, 0);
+    --grid-space: calc(5 * min(1vw, 1.85vh + (18 - 18) * 0.109vh));
+    --sidebar-shrink: calc(1 - (24 + 2) / 100);
+    --gridgap: calc(var(--grid-space) * var(--sidebar-shrink) / var(--groups));
 }
 body{
     background-color: var(--bg-color);
     color: white;
-    display: flex;
-    margin: 0px;
+    margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
 }
+header{
 
-.header{
-    width: 100%;
-    background-color: rgb(238, 192, 255);
-    height: 25vh;
-    display: flex;
-    justify-content: space-evenly;
 }
-.button{
-    height: fit-content;
-    width: fit-content;
-    color: blue;
-    background-color: aqua;
-    margin-top: 3vw;
-    padding: 10px;
-    border-radius: 10px;
-    z-index: 9;
+main{
+
 }
-.main{
-    background-color: turquoise;
+.psystem{
+    padding: 0 1rem 0 1rem;
     display: grid;
-    place-items: center;
+    grid-template-columns: var(--periods) repeat(var(--groups), minmax(0, 1fr));
+    grid-template-rows: var(--periods) repeat(var(--columns), minmax(0, 1fr));
+    gap: var(--gridgap);
+    text-decoration: none;
+    list-style: none;
 }
-.miniheader{
-    z-index: 10;
+.row1{
+    grid-row: 1;
+}
+.row2{
+    grid-row: 2;
+}
+.psystem > div{
+    border-style: dashed solid;
+    border-width: 1px;
+    border-color: white;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    position: relative;
+}
+.psystem > div > div{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+li{
+    text-align: center;
+}
+
+.nonmetal{
+    background-color: var(--nonmetal);
+}
+footer{
+
 }
