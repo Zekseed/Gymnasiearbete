@@ -1,9 +1,17 @@
 :root{
     --bg-color: rgb(30, 30, 30);
+    --border-color: rgba(255, 255, 255, 0.5);
+    --divider-color: rgb(100, 0, 180);
     --groups: 18;
-    --columns: 11;
+    --rows: 11;
     --periods: 1em;
-    --nonmetal: rgb(60, 255, 0);
+    --nonmetal: rgb(23, 100, 0);
+    --alkalimetal: rgb(150, 50, 0);
+    --alkalineearthmetal: rgb(200, 150, 0);
+    --transitionmetal: rgb(200, 0, 30);
+    --post-transitionmetal: rgb(0, 50, 150);
+    --metalloid: rgb(0, 160, 150);
+    --noblegas: rgb(70, 0, 125);
     --grid-space: calc(5 * min(1vw, 1.85vh + (18 - 18) * 0.109vh));
     --sidebar-shrink: calc(1 - (24 + 2) / 100);
     --gridgap: calc(var(--grid-space) * var(--sidebar-shrink) / var(--groups));
@@ -16,7 +24,7 @@ body{
     display: flex;
     flex-direction: column;
 }
-header{
+nav{
 
 }
 main{
@@ -26,37 +34,91 @@ main{
     padding: 0 1rem 0 1rem;
     display: grid;
     grid-template-columns: var(--periods) repeat(var(--groups), minmax(0, 1fr));
-    grid-template-rows: var(--periods) repeat(var(--columns), minmax(0, 1fr));
+    grid-template-rows: var(--periods) repeat(var(--rows), minmax(0, 1fr));
     gap: var(--gridgap);
     text-decoration: none;
     list-style: none;
 }
-.row1{
+.row0{
     grid-row: 1;
 }
-.row2{
+.row1{
     grid-row: 2;
 }
+.p1{
+    grid-column: 2;
+}
+.row2{
+    grid-row: 3;
+}
+.row3{
+    grid-row: 4;
+}
+.row4{
+    grid-row: 5;
+}
+.p4{
+    grid-column: 5;
+}
+.p13{
+    grid-column: 14;
+}
+.p14{
+    grid-column: 15;
+}
+.p15{
+    grid-column: 16;
+}
+.p16{
+    grid-column: 17;
+}
+.p17{
+    grid-column: 18;
+}
+.p18{
+    grid-column: 19;
+}
+.divider{
+    background-color: var(--divider-color);
+    grid-column: 4;
+    grid-row: 7 / span 2;
+    /*height: unset;*/
+}
 .psystem > div{
-    border-style: dashed solid;
-    border-width: 1px;
-    border-color: white;
     width: 100%;
-    height: 0;
+    /*height: 0;*/
     padding-top: 100%;
     position: relative;
 }
-.psystem > div > div{
+.info{
     position: absolute;
     top: 0;
     bottom: 0;
 }
 li{
     text-align: center;
+    align-self: center;
 }
-
 .nonmetal{
     background-color: var(--nonmetal);
+}
+.alkalimetal{
+    background-color: var(--alkalimetal);
+}
+.alkalineearthmetal{
+    background-color: var(--alkalineearthmetal);
+}
+.transitionmetal{
+    background-color: var(--transitionmetal);
+}
+.post-transitionmetal{
+    background-color: var(--post-transitionmetal);
+}
+.metalloid{
+    background-color: var(--metalloid);
+}
+.noblegas{
+    background-color: var(--noblegas);
 }
 footer{
 
