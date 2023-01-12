@@ -4,7 +4,7 @@
     --divider-color: rgb(100, 0, 180);
 
     --columns: 18;
-    --rows: 10;
+    --rows: 9;
     --periods: 1em;
 
     --nonmetal: #35b355;
@@ -49,6 +49,9 @@ body::-webkit-scrollbar-thumb{
 nav{
     height: fit-content;
 }
+nav > img {
+    height: 2vw;
+}
 h1{
     margin: 0px;
 }
@@ -56,9 +59,6 @@ main{
 
 }
 .psystem{
-    height: 55.777641vw;
-    padding: 0 1rem 0 1rem;
-
     display: grid;
     grid-template-columns: var(--periods) repeat(var(--columns), minmax(0, 1fr));
     grid-template-rows: var(--periods) repeat(var(--rows), minmax(0, 1fr));
@@ -68,13 +68,11 @@ main{
     list-style: none;
 
     font-size: var(--font-size);
-}
-.psystem:before{
-    content: '';
-    width: 0;
-    padding-bottom: 100%;
-    grid-row: 1 / 1;
-    grid-column: 1 / 1;
+
+    height: 49.54vw;
+    width: 98vw;
+    padding: 0 1vw 0 1vw;
+
 }
 .row0{
     grid-row: 1;
@@ -105,13 +103,12 @@ main{
     grid-column-start: 5;
     grid-column-end: 20;
     background-color: white;
-    height: 0.5rem;
 }
 .row6e{
-    grid-row: 10;
+    grid-row: 9;
 }
 .row7e{
-    grid-row: 11;
+    grid-row: 10;
 }
 .p1{
     grid-column: 2;
@@ -170,14 +167,15 @@ main{
 .divider{
     background-color: var(--divider-color);
     grid-column: 4;
-    grid-row: 7 / span 5;
+    grid-row: 7 / span 4;
 }
 .psystem > li:not(.mt, .row0, .divider){
-    transition: outline 200ms;
+    outline: 0px solid var(--border-color);
+    transition: ease-in-out 200ms;
+    padding: 2%;
 }
 .psystem > li:not(.mt, .row0, .divider):hover{
     outline: solid 4px var(--border-color);
-    padding: 0%;
     z-index: 100000;
 }
 .mt, .row0{
@@ -237,4 +235,8 @@ main{
 }
 footer{
 
+}
+#popupItem{
+    width: 8%;
+    height: 18%;
 }

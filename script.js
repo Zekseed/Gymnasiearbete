@@ -8,7 +8,8 @@ fetch("./data.json").then((response) => {
 
 document.addEventListener("click", function(event) {
     if (event.target.parentNode.tagName == "LI"){
-
+        
+        //for removing the popup window if it already exists and thus not overlapping
         if (document.getElementById("popup") !== null){
             document.getElementById("popup").remove();
         }
@@ -23,7 +24,7 @@ document.addEventListener("click", function(event) {
         popup.style.top = "50%";
         popup.style.left = "50%";
         popup.style.transform = "translate(-50%, -50%)";
-        popup.style.zIndex = "1000000000";
+        popup.style.zIndex = "1000000";
         popup.style.borderRadius = "10px";
         popup.style.padding = "10px";
         popup.style.color = "white";
@@ -46,27 +47,23 @@ document.addEventListener("click", function(event) {
 
         popup.appendChild(close);
 
-        //for items in popup window
+        //for items in popup window (important factor of 2.25)
         const popupItem = document.createElement("div");
-        popupItem.style.backgroundColor = "white";
-        popupItem.style.flexBasis = "20%";
+        const element = getComputedStyle(event.target.parentNode);
+        console.log(element.backgroundColor);
+        popupItem.id = "popupItem";
+        popupItem.style.backgroundColor = element.backgroundColor;
 
         popup.appendChild(popupItem);
-        const popupItem2 = document.createElement("div");
-        popupItem2.style.backgroundColor = "white";
-        popupItem2.style.flexBasis = "20%";
-        popup.appendChild(popupItem2);
-        const popupItem3 = document.createElement("div");
-        popupItem3.style.backgroundColor = "white";
-        popupItem3.style.flexBasis = "20%";
-        popup.appendChild(popupItem3);
 
+        //check if the user clicked on the abbr tag since it has already checked if the user clicked on a child of an li element
         if (event.target.tagName !== "ABBR"){
             const abbr = event.target.parentNode.querySelector("abbr").innerText;
             console.log(json.find((e) => abbr === e.symbol));
             
             document.body.appendChild(popup);
         }
+        //otherwise it would mean that the user clicked on the abbr tag
         else {
             const abbr = event.target.innerText;
             console.log(json.find((e) => abbr === e.symbol));
@@ -78,7 +75,7 @@ document.addEventListener("click", function(event) {
 
     }
 });
-
+//for closing and animating the popup window
 function closeEvent(){
     const pop = document.getElementById("popup");
 

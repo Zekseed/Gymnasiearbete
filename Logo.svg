@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 910.35 222">
+  <defs>
+    <style>
+      .b {
+        letter-spacing: -.02em;
+      }
+
+      .c {
+        letter-spacing: 0em;
+      }
+
+      .d {
+        letter-spacing: 0em;
+      }
+
+      .e {
+        letter-spacing: 0em;
+      }
+
+      .f {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .g {
+        letter-spacing: -.02em;
+      }
+
+      .h {
+        fill: #fff;
+        font-family: MinionConceptRoman-DisplayMedium, 'Minion Variable Concept';
+        font-size: 118px;
+        font-variation-settings: 'wght' 500, 'opsz' 36;
+        font-weight: 500;
+      }
+
+      .i {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <text class="h" transform="translate(7.26 148.31) scale(1.11 1)"><tspan class="i" x="0" y="0">N</tspan><tspan x="85.67" y="0" xml:space="preserve">M  </tspan><tspan class="g" x="230.57" y="0">N</tspan><tspan class="d" x="312.58" y="0">uc</tspan><tspan class="c" x="416.3" y="0">l</tspan><tspan class="e" x="444.38" y="0">id</tspan><tspan x="532.05" y="0">e </tspan><tspan class="b" x="600.37" y="0">M</tspan><tspan x="700.44" y="0">ap</tspan></text>
+  <circle class="f" cx="111" cy="111" r="109"/>
+</svg>
