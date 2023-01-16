@@ -10,7 +10,13 @@ const data = JSON.stringify(json);
 
 document.addEventListener("click", function(event) {
     if (event.target.parentNode.tagName !== "LI" && document.getElementById("popup") !== null){
-        document.getElementById("popup").remove();
+        if (event.target == document.getElementById("popup") || event.target.parentNode == document.getElementById("popup") || event.target.parentNode.parentNode == document.getElementById("popup")
+        || event.target.parentNode.parentNode.parentNode == document.getElementById("popup")){
+            return;
+        }
+        else {
+            closeEvent();
+        }
     }
 
     if (event.target.parentNode.tagName == "LI"){
